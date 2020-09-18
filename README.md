@@ -1,5 +1,3 @@
-README
-
 Instalacion Mojolicious
 Ejecutar una terminal e ingresar los siguientes comandos:
 
