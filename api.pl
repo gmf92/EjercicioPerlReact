@@ -49,26 +49,39 @@ __DATA__
         }
 
         componentDidMount() {
-        fetch('http://127.0.0.1:3000/api')
-          .then(result=>result.json())
-          .then(result=>
-            this.setState({
-              hecho: true,
-              items: result.items
-          }))
+          fetch('http://127.0.0.1:3000/api')
+            .then( res => res.json()
+            .then(
+              result => {
+                this.setState({
+                  hecho: true,
+                  items: result.ingredientes
+                });
+              }
+            ))
         }
 
         render() {
-          if (this.state.clickeo) {
-          return items;
-          }
 
-        return e(
-          'button',
-          { onClick: () => this.setState({ clickeo: true }) },
-          'Mostar Lista'
-          );
+          if (!this.state.clickeo) { 
+            return e(
+              'button',
+              { onClick: () => this.setState({ clickeo: true }) },
+              'Mostar Lista'
+            );
+          } else {
+            return (
+                <ul>
+                  {this.state.items.map(item => {
+                    <li key={item.nombre}>
+                      {item.nombre} {item.precio}
+                    </li>
+                  })}
+                </ul>
+            );
+          }
         }
+      
       }
 
       const domContainer = document.querySelector('#container');
