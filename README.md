@@ -6,8 +6,8 @@ curl -L https://cpanmin.us | perl - -M https://cpan.metacpan.org -n Mojolicious
 apt install libmojolicious-perl
 
 
-Agregamos el modulo para poder leer un archivo 
-sudo cpan install File::Slurp
+Agregamos el modulo para poder leer un archivo:
+cpan install File::Slurp
 
 Nos ubicamos en la ruta donde se encuentra el proyecto
 y damos permiso de ejecucion al .pl con el siguiente comando:
