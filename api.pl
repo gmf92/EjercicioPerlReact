@@ -45,7 +45,7 @@ __DATA__
       class MostrarLista extends React.Component {
         constructor(props) {
           super(props);
-          this.state = { clickeo: false, hecho: false, items: [] };
+          this.state = { clickeo: false, items: [] };
         }
 
         componentDidMount() {
@@ -54,7 +54,6 @@ __DATA__
             .then(
               result => {
                 this.setState({
-                  hecho: true,
                   items: result.ingredientes
                 });
               }
@@ -63,23 +62,24 @@ __DATA__
 
         render() {
 
-          if (!this.state.clickeo) { 
-            return e(
-              'button',
-              { onClick: () => this.setState({ clickeo: true }) },
-              'Mostar Lista'
-            );
-          } else {
+          if (this.state.clickeo) {
             return (
                 <ul>
-                  {this.state.items.map(item => {
+                  {this.state.items.map(item => (
                     <li key={item.nombre}>
                       {item.nombre} {item.precio}
                     </li>
-                  })}
+                  ))}
                 </ul>
             );
           }
+          
+          return e(
+            'button',
+            { onClick: () => this.setState({ clickeo: true }) },
+            'Mostar Lista'
+          );
+            
         }
       
       }
