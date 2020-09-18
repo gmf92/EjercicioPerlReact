@@ -1,0 +1,25 @@
+[{
+  "nombre" : "Pollo a la cerveza",
+  "dificultad" : "Baja",
+  "duracion" : "2 horas",
+  "ingredientes" : ["pollo", "cerveza", "sal", "pimienta", "cebolla"],
+  "categoria" : "carnes",
+  "autor" : {
+    "nombre" : "Carlos Arguiñano",
+    "restaurante" : "el suyo",
+    "estrellas" : 1
+  	}
+	},
+  {
+    "nombre" : "Sorbete de limón",
+    "dificultad" : "Baja",
+    "duracion" : "0.5 horas",
+    "ingredientes" : ["4 limones", "1 litro de agua", "1 kg de azúcar", "hielo"],
+    "categoria" : "postres",
+    "autor" : {
+      "nombre" : "Juan Mari Arzak",
+      "restaurante" : "sorbetilandia",
+      "estrellas" : 1
+      }
+    }
+]
